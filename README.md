@@ -16,6 +16,11 @@
 </p>
 
 ![3](https://user-images.githubusercontent.com/58189568/149629421-87da32d9-7fad-4188-9e4a-41d156600254.jpg)
+
+<p align="center">
+ The record stored in the database
+</p>
+
 ![4](https://user-images.githubusercontent.com/58189568/149629546-49b215bd-5494-4320-ba24-d971f6584cdc.JPG)
 ![5](https://user-images.githubusercontent.com/58189568/149629547-a4f808ad-4ea9-4e06-818b-13131f99b804.JPG)
 
