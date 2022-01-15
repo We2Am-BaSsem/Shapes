@@ -1,1 +1,17 @@
-UPDATE Shape SET type='Cube' color='#00FF00' rotX=90 rotY=90 rotZ=90 WHERE id=1;
+DROP TABLE IF EXISTS Shape;
+
+CREATE TABLE "Shape" (
+	"id"	INTEGER NOT NULL UNIQUE,
+    "type" TEXT NOT NULL DEFAULT Null UNIQUE,
+    "color" TEXT NOT NULL DEFAULT Null UNIQUE,
+    "rotX" NUMERIC NOT NULL DEFAULT Null UNIQUE,
+    "rotY" NUMERIC NOT NULL DEFAULT Null UNIQUE,
+    "rotZ" NUMERIC NOT NULL DEFAULT Null UNIQUE,
+    "rotW" NUMERIC NOT NULL DEFAULT Null UNIQUE,
+    PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+INSERT INTO
+    Shape (type, color, rotX, rotY, rotZ, rotW)
+VALUES
+    ('Cube', '#FF0000', 0, 0, 0, 0);

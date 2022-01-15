@@ -14,7 +14,7 @@ public class DBManager : MonoBehaviour
         if (s_dbManager == null)
             s_dbManager = this;
     }
-    public (string, string, float, float, float) Load()
+    public (string, string, float, float, float, float) Load()
     {
         using (var connection = new SqliteConnection(_dbName))
         {
@@ -27,22 +27,22 @@ public class DBManager : MonoBehaviour
                 {
                     while (reader.Read())
                     {
-                        return (reader["type"].ToString(), reader["color"].ToString(), float.Parse(reader["rotX"].ToString()), float.Parse(reader["rotY"].ToString()), float.Parse(reader["rotZ"].ToString()));
+                        return (reader["type"].ToString(), reader["color"].ToString(), float.Parse(reader["rotX"].ToString()), float.Parse(reader["rotY"].ToString()), float.Parse(reader["rotZ"].ToString()), float.Parse(reader["rotW"].ToString()));
                     }
                 }
             }
             connection.Close();
         }
-        return (null, null, 0.0f, 0.0f, 0.0f);
+        return ("Cube", "#FF0000", 0.0f, 0.0f, 0.0f, 0.0f);
     }
-    public void Save(string type, string color, float rotX, float rotY, float rotZ)
+    public void Save(string type, string color, float rotX, float rotY, float rotZ, float rotW)
     {
         using (var connection = new SqliteConnection(_dbName))
         {
             connection.Open();
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "UPDATE Shape SET type=\"" + type + "\" ,color=\"#" + color + "\" ,rotX=" + rotX + " ,rotY=" + rotY + " ,rotZ=" + rotZ + " WHERE id=" + 1 + ";";
+                command.CommandText = "UPDATE Shape SET type=\"" + type + "\" ,color=\"#" + color + "\" ,rotX=" + rotX + " ,rotY=" + rotY + " ,rotZ=" + rotZ + " ,rotW=" + rotW + " WHERE id=" + 1 + ";";
                 command.ExecuteNonQuery();
             }
             connection.Close();

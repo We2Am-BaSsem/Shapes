@@ -21,7 +21,8 @@ public class ShapeDB : MonoBehaviour
         ColorUtility.ToHtmlStringRGB(this.GetComponent<Renderer>().material.color),
         this.transform.localRotation.x,
         this.transform.localRotation.y,
-        this.transform.localRotation.z
+        this.transform.localRotation.z,
+        this.transform.localRotation.w
         );
     }
     /// <summary>
@@ -33,6 +34,6 @@ public class ShapeDB : MonoBehaviour
         var shape = DBManager.s_dbManager.Load();
         this.GetComponent<ShapeType>().ChangeType(shape.Item1);
         this.GetComponent<ShapesColor>().ChangeColor(shape.Item2);
-        this.transform.rotation = new Quaternion(shape.Item3, shape.Item4, shape.Item5, this.transform.rotation.w);
+        this.transform.rotation = new Quaternion(shape.Item3, shape.Item4, shape.Item5, shape.Item6);
     }
 }
