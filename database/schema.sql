@@ -1,0 +1,1 @@
+UPDATE Shape SET type='Cube' color='#00FF00' rotX=90 rotY=90 rotZ=90 WHERE id=1;
